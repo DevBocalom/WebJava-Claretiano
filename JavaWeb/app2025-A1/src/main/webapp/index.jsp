@@ -10,9 +10,8 @@
 	<!-- Formulário com a ação para o servlet LoginServlet -->
 	<form action="LoginServlet" method="POST">
 		<label for="email">Email:</label> <input type="email" id="email"
-			name="email" required><br>
-		<br> <label for="senha">Senha:</label> <input type="password"
-			id="senha" name="senha" required><br>
+			name="email" required><br> <br> <label for="senha">Senha:</label>
+		<input type="password" id="senha" name="senha" required><br>
 		<br>
 		<button type="submit" name="entrar">Entrar</button>
 	</form>
