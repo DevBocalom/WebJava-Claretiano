@@ -23,14 +23,18 @@
 <body>
 	<h2>Cadastro de Usuário</h2>
 	<form action="UsuarioControl" method="post">
-		<input type="hidden" id="id" name="id"> <label>Nome:</label> <input
-			type="text" id="nome" name="nome" required><br> <label>Email:</label>
+		<input type="hidden" id="id" name="id"> 
+		<label>Nome:</label> 
+		<input type="text" id="nome" name="nome" required><br> 
+		<label>Email:</label>
 		<input type="email" id="email" name="email" required><br>
-		<label>Senha:</label> <input type="password" id="senha" name="senha"
-			required><br> <label>Telefone:</label> <input
-			type="text" id="telefone" name="telefone" required><br>
-		<label>Status:</label> <input type="checkbox" id="status"
-			name="status"><br> <input type="submit" value="Salvar">
+		<label>Senha:</label> 
+		<input type="password" id="senha" name="senha" required><br> 
+		<label>Telefone:</label> 
+		<input type="text" id="telefone" name="telefone" required><br>
+		<label>Status:</label> 
+		<input type="checkbox" id="status" name="status"><br> 
+		<input type="submit" value="Salvar">
 	</form>
 	<br />
 	<div id="container">

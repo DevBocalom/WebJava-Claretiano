@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
-//@WebServlet("/UsuarioControl")
+@WebServlet("/UsuarioControl")
 public class UsuarioControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UsuarioDAO usuarioDAO;
