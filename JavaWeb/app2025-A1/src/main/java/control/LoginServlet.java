@@ -11,7 +11,7 @@ import dao.UsuarioDAO;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Obtém o parâmetro 'action' para verificar se é login ou logout
 		String action = request.getParameter("action");
@@ -40,17 +40,6 @@ public class LoginServlet extends HttpServlet {
 			} else {
 			    response.sendRedirect("index.jsp?erro=true");
 			}
-			/*
-			if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-				// Login bem-sucedido: cria a sessão e redireciona para a home.jsp
-				HttpSession session = request.getSession();
-				session.setAttribute("usuario", usuario); // Armazena o usuário na sessão
-				response.sendRedirect("home.jsp"); // Redireciona para a página home.jsp
-				System.out.println("--->Login efetuado!");
-			} else {
-				// Login falhou: redireciona de volta para o index.jsp com erro
-				response.sendRedirect("index.jsp?erro=true");
-			}*/
 		}
 	}
 }

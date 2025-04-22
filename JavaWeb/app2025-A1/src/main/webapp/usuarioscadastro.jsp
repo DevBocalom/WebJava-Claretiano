@@ -1,46 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="dao.UsuarioDAO"%>
 <%@ page import="model.Usuario"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
-<title>Cadastro de Usuários</title>
-<script>
-	function editarUsuario(id, nome, email, senha, telefone, status) {
-		document.getElementById("id").value = id;
-		document.getElementById("nome").value = nome;
-		document.getElementById("email").value = email;
-		document.getElementById("senha").value = senha;
-		document.getElementById("telefone").value = telefone;
-		document.getElementById("status").checked = status === "true";
-	}
-</script>
-</head>
-<body>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<jsp:include page="/includes/header.jsp" />
 	<h2>Cadastro de Usuário</h2>
 	<form action="UsuarioControl" method="post">
-		<input type="hidden" id="id" name="id"> 
-		<label>Nome:</label> 
-		<input type="text" id="nome" name="nome" required><br> 
-		<label>Email:</label>
+		<input type="hidden" id="id" name="id"> <label>Nome:</label> <input
+			type="text" id="nome" name="nome" required><br> <label>Email:</label>
 		<input type="email" id="email" name="email" required><br>
-		<label>Senha:</label> 
-		<input type="password" id="senha" name="senha" required><br> 
-		<label>Telefone:</label> 
-		<input type="text" id="telefone" name="telefone" required><br>
-		<label>Status:</label> 
-		<input type="checkbox" id="status" name="status"><br> 
-		<input type="submit" value="Salvar">
+		<label>Senha:</label> <input type="password" id="senha" name="senha"
+			required><br> <label>Telefone:</label> <input
+			type="text" id="telefone" name="telefone" required><br>
+		<label>Status:</label> <input type="checkbox" id="status"
+			name="status"><br> <input type="submit" value="Salvar">
 	</form>
-	<br />
-	<div id="container">
-		<h2>Cadastro de Usuários</h2>
-		<br /> <a href="HomeController?action=home">Voltar para Home</a>
-	</div>
 	<br />
 	<h2>Usuários Cadastrados</h2>
 
@@ -77,5 +50,15 @@
 		}
 		%>
 	</table>
+	<script>
+		function editarUsuario(id, nome, email, senha, telefone, status) {
+			document.getElementById("id").value = id;
+			document.getElementById("nome").value = nome;
+			document.getElementById("email").value = email;
+			document.getElementById("senha").value = senha;
+			document.getElementById("telefone").value = telefone;
+			document.getElementById("status").checked = status === "true";
+		}
+	</script>
 </body>
 </html>
