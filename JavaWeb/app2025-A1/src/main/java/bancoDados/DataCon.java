@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DataCon {
 	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sistema";
 	private static final String JDBC_USERNAME = "root";
-	private static final String JDBC_PASSWORD = "12345678";
+	private static final String JDBC_PASSWORD = "root123";
 
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
