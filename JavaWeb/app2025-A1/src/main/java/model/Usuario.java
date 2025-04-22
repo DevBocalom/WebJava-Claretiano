@@ -11,10 +11,6 @@ public class Usuario {
 
 	// Construtor com valores fixos
 	public Usuario() {
-		this.nome = "Marcos";
-		this.email = "jose@teste.com";
-		this.senha = "123";
-		this.telefone = "91823456";
 	}
 
 	// Getters e Setters

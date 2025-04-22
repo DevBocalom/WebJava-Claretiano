@@ -25,8 +25,11 @@ public class HomeController extends HttpServlet {
 
 		if ("usuarioscadastro".equals(action)) {
 			request.getRequestDispatcher("usuarioscadastro.jsp").forward(request, response);
-		} else {
+		} 	else if ("produtoscadastro".equals(action)) {
+			request.getRequestDispatcher("produto.jsp").forward(request, response);
+		}	else {
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 	}
+	
 }

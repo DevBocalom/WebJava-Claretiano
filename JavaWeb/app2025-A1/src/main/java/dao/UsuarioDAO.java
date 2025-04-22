@@ -17,6 +17,8 @@ public class UsuarioDAO {
 	private static final String DELETE_USER_SQL = "DELETE FROM usuarios WHERE id = ?;";
 
 	private static final String UPDATE_USER_SQL = "UPDATE usuarios SET nome = ?, email = ?, senha = ?, telefone = ?, status = ? WHERE id = ?;";
+	
+	private static final String LOGIN = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
 
 	public void insertUsuario(Usuario usuario) {
 		try (Connection connection = DataCon.getConnection();	
@@ -111,4 +113,33 @@ public class UsuarioDAO {
 		}
 		return rowUpdated;
 	}
+	
+	public Usuario buscarPorEmailSenha(String email, String senha) {
+	    Usuario usuario = null;
+
+	    try (Connection connection = DataCon.getConnection();
+	    		PreparedStatement statement = connection.prepareStatement(LOGIN)){
+	    	statement.setString(1, email);
+	    	statement.setString(2, senha);
+
+	        ResultSet rs = statement.executeQuery();
+
+	        if (rs.next()) {
+	            usuario = new Usuario();
+	            usuario.setId(rs.getInt("id"));
+	            usuario.setEmail(rs.getString("email"));
+	            usuario.setSenha(rs.getString("senha"));
+	            usuario.setNome(rs.getString("nome")); 
+	        }
+
+	        rs.close();
+	        statement.close();
+	        connection.close();
+	    } catch (SQLException | ClassNotFoundException e) {
+	        e.printStackTrace();
+	    }
+
+	    return usuario;
+	}
+
 }

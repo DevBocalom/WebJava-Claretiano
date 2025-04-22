@@ -9,7 +9,7 @@ import model.Produto;
 
 public class ProdutoDAO {
 	
-	private static final String INSERT_PRODUTO_SQL = "INSERT INTO prosutos (nome, descricao, marca, valorUnitario, status) VALUES (?, ?, ?, ?, ?);";
+	private static final String INSERT_PRODUTO_SQL = "INSERT INTO produtos (nome, descricao, marca, valorUnitario, status) VALUES (?, ?, ?, ?, ?);";
 
 	private static final String SELECT_PRODUTO_BY_ID = "SELECT * FROM produtos WHERE id = ?;";
 

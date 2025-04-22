@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Usuario;
+import dao.UsuarioDAO;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
@@ -28,8 +29,18 @@ public class LoginServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			String senha = request.getParameter("senha");
 			// Cria o objeto Usuario
-			Usuario usuario = new Usuario();
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			Usuario usuario = usuarioDAO.buscarPorEmailSenha(email, senha);
 			// Valida o email e a senha
+			if (usuario != null) {
+			    HttpSession session = request.getSession();
+			    session.setAttribute("usuario", usuario);
+			    response.sendRedirect("home.jsp");
+			    System.out.println("---> Login efetuado!");
+			} else {
+			    response.sendRedirect("index.jsp?erro=true");
+			}
+			/*
 			if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
 				// Login bem-sucedido: cria a sessão e redireciona para a home.jsp
 				HttpSession session = request.getSession();
@@ -39,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				// Login falhou: redireciona de volta para o index.jsp com erro
 				response.sendRedirect("index.jsp?erro=true");
-			}
+			}*/
 		}
 	}
 }

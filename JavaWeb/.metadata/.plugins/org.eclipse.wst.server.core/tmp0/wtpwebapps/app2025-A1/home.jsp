@@ -14,6 +14,9 @@
 		<h4>Login realizado com sucesso!</h4>
 		<br /> <a href="HomeController?action=usuarioscadastro">Ir para
 			Cadastro de Usuários</a> <br /> <br />
+		<br /> <a href="HomeController?action=produtoscadastro">Ir para
+			Cadastro de Produtos</a> <br /> <br />
+
 		<!-- Botão de Logout -->
 		
 		<form action="LoginServlet" method="POST">

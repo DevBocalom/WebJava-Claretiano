@@ -33,7 +33,7 @@ public class ProdutoControl extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String descricao = request.getParameter("descricao");
 		String marca = request.getParameter("marca");
-		Double valorUnitario = request.getParameter("valorUnitario");
+		Double valorUnitario = Double.parseDouble(request.getParameter("valorUnitario"));
 		boolean status = request.getParameter("status") != null;
 		Produto produto = new Produto();
 		produto.setNome(nome);
@@ -47,7 +47,7 @@ public class ProdutoControl extends HttpServlet {
 			produto.setId(Long.parseLong(id));
 			produtoDAO.updateProduto(produto);
 		}
-		response.sendRedirect("produtoscadastro.jsp");
+		response.sendRedirect("produto.jsp");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -57,6 +57,6 @@ public class ProdutoControl extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			produtoDAO.deleteProduto(id);
 		}
-		response.sendRedirect("produtoscadastro.jsp");
+		response.sendRedirect("produto.jsp");
 	}
 }
