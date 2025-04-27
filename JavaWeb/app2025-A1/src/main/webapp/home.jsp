@@ -5,7 +5,6 @@
 	<h2>Bem-vindo ao Sistema!</h2>
 	<h2>Página Home</h2>
 	<br />
-
 </div>
 </body>
 </html>

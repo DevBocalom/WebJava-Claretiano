@@ -9,7 +9,6 @@ public class Usuario {
 	private String telefone;
 	private boolean status;
 
-	// Construtor com valores fixos
 	public Usuario() {
 	}
 

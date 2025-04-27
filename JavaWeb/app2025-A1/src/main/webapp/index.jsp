@@ -80,11 +80,7 @@
 				<input type="hidden" name="action" value="login">
 				<div style="display: flex; gap: 10px;">
 					<button type="submit" class="btn-login" style="flex: 1;">Entrar</button>
-					<a
-						href="${pageContext.request.contextPath}/LoginServlet?action=usuarioscadastro"
-						class="btn-login" style="flex: 1; text-align: center; text-decoration: none; line-height: 38px;">Cadastrar</a>
 				</div>
-
 			</form>
 		</div>
 	</div>
