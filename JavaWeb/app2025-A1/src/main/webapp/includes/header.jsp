@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Minha Aplicação</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
 </head>
 <body>
 <div>
     <img src="${pageContext.request.contextPath}/css/img.jpg" style="width: 1535px; height: 300px; " alt="banner" />
 </div>
+
 <div class="navbar">
     <div class="nav-left">
         <a href="HomeController?action=home">Home</a>

@@ -21,7 +21,7 @@
 	border-radius: 10px;
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 	width: 100%;
-	max-width: 400px;
+	max-width: 500px;
 }
 
 .login-box h2 {
