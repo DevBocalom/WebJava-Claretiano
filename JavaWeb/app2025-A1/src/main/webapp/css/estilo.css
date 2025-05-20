@@ -40,7 +40,19 @@ body {
 .navbar a:hover {
     background-color: #34495e;
 }
-
+.btn-cancelar {
+    background-color: #ff0000;
+    color: white;
+	border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 205px;
+}
+.btn-cancelar:hover {
+    background-color: #ff8080;
+}
 form {
     background: white;
     padding: 30px;
@@ -120,7 +132,7 @@ table button, table a {
     text-decoration: none;
     font-size: 0.9rem;
     margin-right: 0.5rem;
-}
+    }
 
 table button {
     background-color: #f39c12;
@@ -132,8 +144,12 @@ table button:hover {
 }
 
 table a {
-    background-color: #e74c3c;
-    color: white;
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 5px 18px;
+    border-radius: 5px; 
+    text-decoration: none; 
     display: inline-block;
 }
 

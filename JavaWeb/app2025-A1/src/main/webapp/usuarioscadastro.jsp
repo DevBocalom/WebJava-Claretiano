@@ -10,33 +10,30 @@
 	<input type="hidden" id="id" name="id">
 
 	<div class="form-group">
-		<label for="nome">Nome:</label> <input type="text" id="nome"
-			name="nome" class="form-control" required>
+		<label for="nome">Nome:</label> 
+		<input type="text" id="nome" name="nome" class="form-control" required>
 	</div>
-
 	<div class="form-group">
-		<label for="email">Email:</label> <input type="email" id="email"
-			name="email" class="form-control" required>
+		<label for="email">Email:</label> 
+		<input type="email" id="email" name="email" class="form-control" required>
 	</div>
-
 	<div class="form-group">
-		<label for="senha">Senha:</label> <input type="password" id="senha"
-			name="senha" class="form-control" required>
+		<label for="senha">Senha:</label> 
+		<input type="password" id="senha" name="senha" class="form-control" required>
 	</div>
-
 	<div class="form-group">
-		<label for="telefone">Telefone:</label> <input type="text"
-			id="telefone" name="telefone" class="form-control" required>
+		<label for="telefone">Telefone:</label> 
+		<input type="text" id="telefone" name="telefone" class="form-control" required>
 	</div>
-
 	<div class="form-group checkbox-group">
-		<label for="status">Status:</label> <input type="checkbox" id="status"
-			name="status" class="form-checkbox">
+		<label for="status">Status:</label> 
+		<input type="checkbox" id="status" name="status" class="form-checkbox">
 	</div>
-
 	<div class="form-group">
 		<input type="submit" value="Salvar" class="btn-submit">
+		<button type="button" onclick="cancelarEdicao()" class="btn-cancelar">Cancelar</button>
 	</div>
+
 </form>
 
 <h2>Usuários Cadastrados</h2>
@@ -68,7 +65,7 @@
 				<%=usuario.isStatus() ? "Ativo" : "Inativo"%>
 			</td>
 			<td class="celula-acoes">
-				<button class="botao-editar"
+				<button
 					onclick="editarUsuario('<%=usuario.getId()%>', '<%=usuario.getNome()%>', 
                         '<%=usuario.getEmail()%>', '<%=usuario.getSenha()%>', '<%=usuario.getTelefone()%>', 
                         '<%=usuario.isStatus()%>')">Editar</button>
@@ -90,6 +87,16 @@
 		document.getElementById("telefone").value = telefone;
 		document.getElementById("status").checked = status === "true";
 	}
+
+	function cancelarEdicao() {
+		document.getElementById("id").value = "";
+		document.getElementById("nome").value = "";
+		document.getElementById("email").value = "";
+		document.getElementById("senha").value = "";
+		document.getElementById("telefone").value = "";
+		document.getElementById("status").checked = false;
+	}
 </script>
+
 </body>
 </html>

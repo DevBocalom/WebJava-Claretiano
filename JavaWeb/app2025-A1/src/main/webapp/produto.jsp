@@ -5,14 +5,30 @@
 <jsp:include page="/includes/header.jsp" />
 <h2>Cadastro de Produtos</h2>
 <form action="ProdutoControl" method="post">
-	<input type="hidden" id="id" name="id"> <label>Nome:</label> <input
-		type="text" id="nome" name="nome" required><br> <label>Descrição:</label>
+	<input type="hidden" id="id" name="id"> 
+	<div class="form-group">
+	<label>Nome:</label> 
+	<input type="text" id="nome" name="nome" required><br>
+	 </div>
+	 <div class="form-group">
+	<label>Descrição:</label>
 	<input type="text" id="descricao" name="descricao" required><br>
-	<label>Marca:</label> <input type="text" id="marca" name="marca"
-		required><br> <label>Valor Unitário:</label> <input
-		type="text" id="valorUnitario" name="valorUnitario" required><br>
+	</div>
+	<div class="form-group">
+	<label>Marca:</label> 
+	<input type="text" id="marca" name="marca" required><br> 
+	</div>
+	<div class="form-group">
+	<label>Valor Unitário:</label> 
+	<input type="text" id="valorUnitario" name="valorUnitario" required><br>
+	</div>	
+	<div class="form-group checkbox-group">	
 	<label>Status:</label> <input type="checkbox" id="status" name="status"><br>
-	<input type="submit" value="Salvar">
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Salvar" class="btn-submit">
+		<button type="button" onclick="cancelarEdicao()" class="btn-cancelar">Cancelar</button>
+	</div>
 </form>
 <br />
 
@@ -46,8 +62,7 @@
 				onclick="editarProdutos('<%=produto.getId()%>', '<%=produto.getNome()%>', 
             '<%=produto.getDescricao()%>', '<%=produto.getMarca()%>', '<%=produto.getValorUnitario()%>', 
             '<%=produto.isStatus()%>')">Editar</button>
-			<a href="ProdutoControl?action=delete&id=<%=produto.getId()%>"
-			style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; text-decoration: none; display: inline-block;">Excluir</a>
+			<a href="ProdutoControl?action=delete&id=<%=produto.getId()%>">Excluir</a>
 		</td>
 	</tr>
 	<%
@@ -62,6 +77,14 @@
 		document.getElementById("marca").value = marca;
 		document.getElementById("valorUnitario").value = valorUnitario;
 		document.getElementById("status").checked = status === "true";
+	}	
+	function cancelarEdicao() {
+		document.getElementById("id").value = "";
+		document.getElementById("nome").value = "";
+		document.getElementById("descricao").value = "";
+		document.getElementById("marca").value = "";
+		document.getElementById("valorUnitario").value = "";
+		document.getElementById("status").checked = false;
 	}
 </script>
 </body>
